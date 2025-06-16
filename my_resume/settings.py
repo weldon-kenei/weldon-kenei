@@ -140,20 +140,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'media')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+#     os.path.join(BASE_DIR, 'media')
+# ]
 
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'staticfiles')]
-STATIC_ROOT = BASE_DIR / "static"
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATIC_URL = "/static/"
+# STATICFILES_DIRS = [os.path.join(BASE_DIR,'staticfiles')]
+# STATIC_ROOT = BASE_DIR / "static"
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = "/static/"
+
+# Where Django looks for additional static files (like app-level CSS/JS)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Where `collectstatic` puts all files (for WhiteNoise to serve)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+# WhiteNoise compression and caching
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
