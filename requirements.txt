@@ -15,7 +15,7 @@ typing_extensions==4.12.2
 tzdata==2023.4
 urllib3==2.2.2
 whitenoise==6.7.0
-django-ckeditor==6.7.3asgiref==3.8.1
+django-ckeditor==6.7.3
 Django==5.2.3
 django-ckeditor==6.7.3
 django-js-asset==3.1.2
