@@ -28,7 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',
-    '.vercel.app'
+    '.vercel.app',
+    'now.sh'
 ]
 
 
@@ -92,9 +93,9 @@ DATABASES ={
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'railway',
         'USER':'postgres',
-        'PASSWORD':'TmzeUJzYZIFcOtVyZPIwLeyJmWxFanKv',
-        'HOST':'roundhouse.proxy.rlwy.net',
-        'PORT':'25847',
+        'PASSWORD':'UObSKMSQRckUrENwGTteZOfzYQyOytJx',
+        'HOST':'hopper.proxy.rlwy.net',
+        'PORT':'33900',
     }
 }
 
@@ -141,7 +142,9 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+#STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
