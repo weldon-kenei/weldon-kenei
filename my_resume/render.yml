@@ -1,0 +1,7 @@
+service:
+  name: my_resume
+  type: web
+  plan: free
+  runtime: python
+  buildCommand: './buildfile.sh'
+  startCommand: 'python -m gunicorn my_resume.asgi:application -k uvicorn.workers.UvicornWorker'
