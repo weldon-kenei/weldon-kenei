@@ -16,6 +16,7 @@ import whitenoise
 import dj_database_url
 from dotenv import load_dotenv
 from cloudinary import *
+import cloudinary_storage as cloudinaryStorage
 
 load_dotenv()
 
@@ -46,7 +47,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'whitenoise',
     'main',
-    'cloudinary'
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
