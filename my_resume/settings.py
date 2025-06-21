@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-v8bzoj5)*&_%x-yy7o*z-2$*m1uuo*hbtb(n)%@bboej@%wkox
 # SECURITY WARNING: don't run with debug turned on in production!
    
 ALLOWED_HOSTS = ['*']
-DEBUG = True
+DEBUG = False
 
 # Application definition
 
@@ -154,11 +154,18 @@ USE_TZ = True
 
 DEFAULT_FILE_STORAGE = 'cloudinaryStorage.storage.MediaCloudinaryStorage'
 
+import cloudinary
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
+
+cloudinary.config( 
+  cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'), 
+  api_key = os.getenv('CLOUDINARY_API_KEY'), 
+  api_secret = os.getenv('CLOUDINARY_API_SECRET') 
+)
 
 
 # Static files (CSS, JavaScript, Images)
